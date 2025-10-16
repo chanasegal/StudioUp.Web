@@ -1,0 +1,21 @@
+<div>
+    <div id="subscriptionBenefitsContainer">
+        <img class="subscriptionImage" alt="">
+        <div class="benefitsRectangle">
+            <p class="benefitsRectangleText">הטבות כושר למנויים</p>
+        </div>
+        <div class="subscriptionText">{{s.title}}</div>
+    </div>
+
+    <div id="contentSectionsContainer">
+        <div class="optionList" *ngFor="let po of s.contentSections">
+            <div *ngIf="po.isActive == true">
+                <div class="contentBox">
+                    <p class="contentBoxText1">{{po.section1}}</p>
+                    <p *ngIf="po.section2 != 'null'" class="contentBoxText2">{{po.section2}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<app-tracks></app-tracks>

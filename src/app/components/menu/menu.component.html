@@ -1,0 +1,23 @@
+<div>
+
+    <p-menubar [model]="items" class="navbar-nav d-none d-lg-flex" id="nav_row">
+      <ng-template pTemplate="item" let-item>
+        <a [class]="item.class" [id]="item.id" [routerLink]="item.routerLink" routerLinkActive="active">
+          {{item.label}}
+        </a>
+      </ng-template>
+    </p-menubar>
+</div>
+
+<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+    <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">תפריט</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close" id="close"></button>
+    </div>
+    <div class="offcanvas-body">
+        <div class="navbar-nav">
+        <a *ngFor="let item of items" class="nav-item nav-link" [routerLink]="item.routerLink" routerLinkActive="active">{{item.label}}</a>
+        </div>
+    </div>
+</div>
+
